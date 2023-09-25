@@ -1,0 +1,79 @@
+.example-container {
+    height: 100vh;
+
+}
+
+.mat-drawer-container {
+    background-color: white;
+
+}
+
+.example-icon {
+    cursor: pointer;
+}
+
+.sidenav {
+    width: 300px;
+}
+
+.mat-drawer {
+    background-color: white;
+    box-shadow: 2px 0 7px -2px #888;
+    color: black,
+}
+
+.logo-container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 56px;
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+}
+
+mat-toolbar,
+mat-toolbar-row {
+    height: 56px;
+    min-height: 56px;
+}
+
+.menu-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding-left: 16px;
+        padding-right: 16px;
+        cursor: pointer;
+        height: 48px;
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);    
+        }
+    }
+
+}
+
+.mat-drawer-container {
+    color: unset;
+}
+
+.router-container {
+    padding-left: 56px;
+    padding-right: 56px;
+    padding-top: 16px;
+}
+
+.crmLogo {
+    width: 57%;
+    height: 96%;
+}
