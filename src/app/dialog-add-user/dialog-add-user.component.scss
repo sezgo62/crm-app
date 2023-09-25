@@ -1,0 +1,28 @@
+.formDesign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 700px;
+    width: 650px;
+}
+
+.mat-mdc-dialog-content {
+    display:flex;
+    flex-direction: column;
+}
+
+mat-form-field {
+    padding-right: 22px;
+    padding-left: 22px;
+}
+
+mat-progress-bar {
+    position: absolute;
+    top: 2px;
+}
+
+.firstLastName{
+    display: flex;
+}
+

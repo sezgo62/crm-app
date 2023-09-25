@@ -1,1 +1,57 @@
-<p>dialog-add-user works!</p>
+
+
+<div class="formDesign">
+
+    <mat-progress-bar *ngIf="progressBar"  mode="indeterminate"></mat-progress-bar>
+
+
+    <h1 mat-dialog-title>Add User</h1>
+    <div mat-dialog-content>
+
+        <div class="firstLastName">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input [disabled]="progressBar" [(ngModel)]="user.firstName" matInput placeholder="Placeholder">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input [disabled]="progressBar" [(ngModel)]="user.lastName" matInput placeholder="Placeholder">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date Picker</mat-label>
+            <input [disabled]="progressBar" [(ngModel)]="birthDate" matInput placeholder="Placeholder" [matDatepicker]="picker1">
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Street + House No.</mat-label>
+            <input [disabled]="progressBar" [(ngModel)]="user.street" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>ZIP-Code</mat-label>
+            <input [disabled]="progressBar" [(ngModel)]="user.zipCode" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input [disabled]="progressBar" [(ngModel)]="user.city" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+    </div>
+    <div mat-dialog-actions>
+        <button [disabled]="progressBar" mat-button (click)="onNoClick()">Cancel</button>
+        <button [disabled]="progressBar" (click)="saveUser()" mat-button [mat-dialog-close]="" cdkFocusInitial>Save</button>
+    </div>
+</div>

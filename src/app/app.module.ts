@@ -46,6 +46,6 @@ import {MatCardModule} from '@angular/material/card';
     MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]<i class="fa fa-y-combinator" aria-hidden="true"></i>
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
