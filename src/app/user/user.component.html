@@ -6,15 +6,10 @@
                 <th>Email</th>
                 <th>City</th>
             </tr>
-            <tr>
-                <td>Thomas</td>
-                <td>Thomas@mail.com</td>
-                <td>Wiesbaden</td>
-            </tr>
-            <tr>
-                <td>Thomas</td>
-                <td>Thomas@mail.com</td>
-                <td>Wiesbaden</td>
+            <tr *ngFor="let user of serviceFirebase.allUsers" [routerLink]="['/user/' + user.id]">
+                <td>{{user.firstName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.city}}</td>
             </tr>
         </table>
     </mat-card-content>

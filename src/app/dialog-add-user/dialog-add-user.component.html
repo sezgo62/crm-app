@@ -22,9 +22,14 @@
             </mat-form-field>
         </div>
 
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input [disabled]="progressBar" [(ngModel)]="user.email" matInput placeholder="Email">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Date Picker</mat-label>
+            <mat-label>Birthdate</mat-label>
             <input [disabled]="progressBar" [(ngModel)]="birthDate" matInput placeholder="Placeholder" [matDatepicker]="picker1">
             <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
@@ -51,7 +56,7 @@
 
     </div>
     <div mat-dialog-actions>
-        <button [disabled]="progressBar" mat-button (click)="onNoClick()">Cancel</button>
+        <button [disabled]="progressBar" mat-button (click)="dialoRef.close()">Cancel</button>
         <button [disabled]="progressBar" (click)="saveUser()" mat-button [mat-dialog-close]="" cdkFocusInitial>Save</button>
     </div>
 </div>
