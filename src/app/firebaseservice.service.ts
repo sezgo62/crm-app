@@ -29,10 +29,10 @@ export class FirebaseserviceService {
         //const userData = element.data() as User;
         console.log('element.data() is', element.data());
 
-        /*let colRef = this.getSingleDocRef(this.getColIdFromUsers(), element.id);
+        let colRef = this.getSingleDocRef(this.getColIdFromUsers(), element.id);
       updateDoc(colRef, {
           id: element.id
-        });*/
+        });
 
         this.allUsers.push(this.setNodeObject(element.data(), element.id));
 

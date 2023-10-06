@@ -25,11 +25,9 @@ user = new User();
 
   
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogAddUserComponent, { //hier fügen wir die Komponente ein die geöffnet werden soll. In diesem Fall, "DialogAddUserComponent", weil das unser Dialog enthalten ist.
+    const dialogRef = this.dialog.open(DialogAddUserComponent, { //hier fügen wir die Komponente ein die geöffnet werden soll. In diesem Fall, "DialogAddUserComponent", weil da unser Dialog enthalten ist.
       //data: {name: this.name},
     });
     
   }
-
-
 }
