@@ -13,6 +13,8 @@ export class DialogEditUserComponent {
 user!: User;
 progressBar = false;
 birthDate: any;
+userId!: any;
+
 
 constructor(public dialoRef: MatDialogRef<DialogAddUserComponent>, public serviceFirebase: FirebaseserviceService) {
   console.log(this.user);

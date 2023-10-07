@@ -11,16 +11,17 @@ import { User } from 'src/models/user.class';
 export class DialogEditAdressComponent {
 
   user!: User;
+  userId!: any;
 
-progressBar = false;
+  progressBar = false;
 
-constructor(public dialog: MatDialog, public fireStore: FirebaseserviceService, public dialogRef: MatDialogRef<DialogEditAdressComponent>) {
+  constructor(public dialog: MatDialog, public fireStore: FirebaseserviceService, public dialogRef: MatDialogRef<DialogEditAdressComponent>) {
 
+  }
+
+
+  updateUser() {
+    this.fireStore.updateUser(this.user);
+    debugger;
+  }
 }
-
-
-saveUser() {
-
-}
-}
- 

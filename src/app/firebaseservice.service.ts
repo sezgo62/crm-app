@@ -30,7 +30,7 @@ export class FirebaseserviceService {
         console.log('element.data() is', element.data());
 
         let colRef = this.getSingleDocRef(this.getColIdFromUsers(), element.id);
-      updateDoc(colRef, {
+        updateDoc(colRef, {
           id: element.id
         });
 
@@ -66,23 +66,23 @@ export class FirebaseserviceService {
   }
 
 
-setNodeObject(obj: any, id: string): User {  //In dieser Funktion stellen wir sicher das auch jedes Feld einen Wert hat, auch wenn der user z.B. den Note speichern konnte ohne einen Titel einzugeben, wie auch immer.
-  const user = new User({
-    firstName: obj.firstName,
-    lastName: obj.lastName,
-    birthDate: obj.birthDate,
-    street: obj.street,
-    zipCode: obj.zipCode, // Standardwert für zipCode, falls nicht vorhanden
-    city: obj.city,
-    email: obj.email,   // Standardwert für city, falls nicht vorhanden
-    id: obj.id
-  });
-  return user;
-}
+  setNodeObject(obj: any, id: string): User {  //In dieser Funktion stellen wir sicher das auch jedes Feld einen Wert hat, auch wenn der user z.B. den Note speichern konnte ohne einen Titel einzugeben, wie auch immer.
+    const user = new User({
+      firstName: obj.firstName,
+      lastName: obj.lastName,
+      birthDate: obj.birthDate,
+      street: obj.street,
+      zipCode: obj.zipCode, // Standardwert für zipCode, falls nicht vorhanden
+      city: obj.city,
+      email: obj.email,   // Standardwert für city, falls nicht vorhanden
+      id: obj.id
+    });
+    return user;
+  }
 
-getRefUsers() {
-  return collection(this.firestore, 'users');
-}
+  getRefUsers() {
+    return collection(this.firestore, 'users');
+  }
 
 
   /*getRef(collId: string) {
@@ -90,12 +90,36 @@ getRefUsers() {
   }*/
 
   async addUser(collId: string, item: any) {
-  await addDoc(this.getRefUsers(), item).catch(
-    (err) => { console.log(err) }
-  ).then(
-    (docRef) => {
-      console.log('Document writen with ID: ', docRef);
-    })
-}
+    await addDoc(this.getRefUsers(), item).catch(
+      (err) => { console.log(err) }
+    ).then(
+      (docRef) => {
+        console.log('Document writen with ID: ', docRef);
+      })
+  }
+
+  async updateUser(user: User) {
+    debugger;
+    if (user.id) {
+      let colRef = this.getSingleDocRef('users', user.id);
+      await updateDoc(colRef, this.getCleanJson(user)).catch(
+        (err) => { console.log(err) }
+      );
+    }
+  }
+
+  getCleanJson(user: User) {
+    return {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      birthDate: user.birthDate,
+      street: user.street,
+      zipCode: user.zipCode,
+      city: user.city,
+      email: user.email,
+      id: user.id
+
+    }
+  }
 
 }
