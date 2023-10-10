@@ -97,15 +97,18 @@ export class FirebaseserviceService {
         console.log('Document writen with ID: ', docRef);
       })
   }
+  progressBar = false;
 
   async updateUser(user: User) {
     debugger;
+    this.progressBar = true;
+
     if (user.id) {
       let colRef = this.getSingleDocRef('users', user.id);
       await updateDoc(colRef, this.getCleanJson(user)).catch(
-        (err) => { console.log(err) }
-      );
-    }
+        (err) => { console.log(err) }).then(() => {
+          this.progressBar = false;
+        })    }
   }
 
   getCleanJson(user: User) {

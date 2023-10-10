@@ -15,13 +15,13 @@ export class DialogEditAdressComponent {
 
   progressBar = false;
 
-  constructor(public dialog: MatDialog, public fireStore: FirebaseserviceService, public dialogRef: MatDialogRef<DialogEditAdressComponent>) {
+  constructor(public dialog: MatDialog, public serviceFirebase: FirebaseserviceService, public dialogRef: MatDialogRef<DialogEditAdressComponent>) {
 
   }
 
 
   updateUser() {
-    this.fireStore.updateUser(this.user);
+    this.serviceFirebase.updateUser(this.user);
     debugger;
   }
 }

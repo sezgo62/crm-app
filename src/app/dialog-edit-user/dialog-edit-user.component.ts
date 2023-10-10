@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FirebaseserviceService } from '../firebaseservice.service';
 
 @Component({
@@ -16,9 +16,13 @@ birthDate: any;
 userId!: any;
 
 
-constructor(public dialoRef: MatDialogRef<DialogAddUserComponent>, public serviceFirebase: FirebaseserviceService) {
+constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<DialogAddUserComponent>, public serviceFirebase: FirebaseserviceService) {
   console.log(this.user);
 
 }
 
+updateUser() {
+  this.serviceFirebase.updateUser(this.user);
+  debugger;
+}
 }

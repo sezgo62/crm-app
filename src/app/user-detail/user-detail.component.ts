@@ -31,14 +31,15 @@ console.log(this.user);
 
 editUserDetail(): void {
     const dialogRef = this.dialog.open(DialogEditUserComponent) //hier fügen wir die Komponente ein die geöffnet werden soll. In diesem Fall, "DialogAddUserComponent", weil da unser Dialog enthalten ist.
-      dialogRef.componentInstance.user = new User(this.user.toJson());  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
+      dialogRef.componentInstance.user = new User(this.user);  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
       dialogRef.componentInstance.userId = this.userId;  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
 
 }
 
 editMenu() {
   const dialogRef = this.dialog.open(DialogEditAdressComponent);
-  dialogRef.componentInstance.user = new User(this.user.toJson());  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
+  debugger;
+  dialogRef.componentInstance.user = new User(this.user);  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
   dialogRef.componentInstance.userId = this.userId;  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
 
 }
