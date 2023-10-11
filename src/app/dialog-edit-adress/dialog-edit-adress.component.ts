@@ -21,7 +21,7 @@ export class DialogEditAdressComponent {
 
 
   updateUser() {
-    this.serviceFirebase.updateUser(this.user);
+    this.serviceFirebase.updateUser(this.user, this.dialogRef);
     debugger;
   }
 }

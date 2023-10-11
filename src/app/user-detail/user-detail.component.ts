@@ -41,7 +41,14 @@ editMenu() {
   debugger;
   dialogRef.componentInstance.user = new User(this.user);  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
   dialogRef.componentInstance.userId = this.userId;  // Mit dieser Zeile greifen wir auf die DialogEditAdressComponent zu und lagern die user in dieser component dort ein um auf daten zuzugreifen.
-
+  
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+    debugger;
+    console.log(result);
+    
+    this.user = result;
+  });
 }
 
 }

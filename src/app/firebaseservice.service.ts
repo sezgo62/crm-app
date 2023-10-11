@@ -54,7 +54,6 @@ export class FirebaseserviceService {
 
 
   async getAnUser(colId: any, userId: any) {
-    debugger;
 
     const docRef = doc(this.firestore, colId, userId);
     const docSnap = await getDoc(docRef);
@@ -98,8 +97,9 @@ export class FirebaseserviceService {
       })
   }
   progressBar = false;
+  dialog: any;
 
-  async updateUser(user: User) {
+  async updateUser(user: User, dialogRef: any) {
     debugger;
     this.progressBar = true;
 
@@ -108,6 +108,7 @@ export class FirebaseserviceService {
       await updateDoc(colRef, this.getCleanJson(user)).catch(
         (err) => { console.log(err) }).then(() => {
           this.progressBar = false;
+          dialogRef.close();
         })    }
   }
 
