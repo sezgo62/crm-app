@@ -1,1 +1,22 @@
-<p>dashboard works!</p>
+
+<div class="registerContainer">
+
+    <div><h2>Register here</h2></div>
+<input class="email" type="email" placeholder="E-Mail" [(ngModel)]="email"> 
+
+<input class="password" type="password" placeholder="Password" [(ngModel)]="password">
+
+<button (click)="registerUser()">Register!</button>
+</div>
+
+
+<div class="loginContainer">
+    
+    <div><h2>Login here</h2></div>
+
+    <input class="email" type="email" placeholder="E-Mail" [(ngModel)]="email"> 
+    
+    <input class="password" type="password" placeholder="Password" [(ngModel)]="password">
+    
+    <button (click)="loginUser()">Login!</button>
+    </div>

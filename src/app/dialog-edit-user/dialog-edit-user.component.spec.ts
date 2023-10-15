@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DialogEditUserComponent } from './dialog-edit-user.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 describe('DialogEditUserComponent', () => {
   let component: DialogEditUserComponent;
@@ -9,9 +9,9 @@ describe('DialogEditUserComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, MatDialogRef],
       declarations: [DialogEditUserComponent],
-       providers: []
+       providers: [MatDialogModule, MatDialogRef]
     });
     fixture = TestBed.createComponent(DialogEditUserComponent);
     component = fixture.componentInstance;

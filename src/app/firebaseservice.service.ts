@@ -2,14 +2,24 @@ import { getDoc, getDocs, query } from '@angular/fire/firestore';
 import { Injectable, inject } from '@angular/core';
 import { Firestore, collection, doc, collectionData, onSnapshot, addDoc, DocumentReference, updateDoc, deleteDoc, where, limit } from '@angular/fire/firestore';
 import { User } from 'src/models/user.class';
+import { getAuth } from "firebase/auth";
+import { initializeApp } from '@angular/fire/app';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseserviceService {
 
+  auth;
+
   constructor() {
     this.unsubUsers = this.subUsersList();
+    const app = initializeApp(environment.firebase);
+    this.auth = getAuth(app);
+    console.log(this.auth);
+    
   }
 
   firestore: Firestore = inject(Firestore);

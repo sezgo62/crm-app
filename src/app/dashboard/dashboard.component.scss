@@ -1,0 +1,32 @@
+.registerContainer {
+border: 3px solid rgb(82, 24, 129);
+margin-bottom: 50px;
+width: 108%;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+
+}
+
+
+.loginContainer{
+    border: 3px solid rgb(82, 24, 129);
+    width: 108%;
+
+    display: flex;
+    flex-direction: column;
+
+align-items: center;
+justify-content: center;
+}
+
+.email {
+    margin-bottom: 15px;
+}
+
+.password {
+    margin-bottom: 15px;
+}
