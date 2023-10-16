@@ -48,7 +48,7 @@ debugger;
 signInWithEmailAndPassword(auth, this.email, this.password)
   .then((userCredential) => {
 console.log('You are logged in', userCredential);
-this.router.navigate(['user']);
+this.router.navigate(['/user']);
     const user = userCredential.user;
     // ...
   })
